@@ -1,6 +1,5 @@
-
-# Created by https://www.gitignore.io/api/git,macos,django,python,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=git,macos,django,python,visualstudiocode
+# Created by https://www.gitignore.io/api/git,macos,django,poetry,python,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=git,macos,django,poetry,python,visualstudiocode
 
 ### Django ###
 *.log
@@ -162,6 +161,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+#!! ERROR: poetry is undefined. Use list command to see defined gitignore types !!#
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 
@@ -220,4 +221,4 @@ Temporary Items
 # Ignore all local history of files
 .history
 
-# End of https://www.gitignore.io/api/git,macos,django,python,visualstudiocode
+# End of https://www.gitignore.io/api/git,macos,django,poetry,python,visualstudiocode
