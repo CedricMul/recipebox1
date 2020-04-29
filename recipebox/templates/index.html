@@ -1,0 +1,18 @@
+<h1>Recipe Box</h1>
+<ul>
+    {% for recipe in recipe_data %}
+        <li>
+            {{ recipe.title }} | by {{ recipe.author.name }}
+        </li>
+            <ul>
+                {{ recipe.description }}
+            </ul>
+            <ul>
+                {{ recipe.time_required }}
+            </ul>
+            <ul>
+                {{ recipe.instructions }}
+            </ul>
+    {% endfor %}
+    </ul>
+    
