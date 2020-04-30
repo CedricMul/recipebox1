@@ -1,7 +1,7 @@
 <h1>Recipe Box</h1>
 <ul>
     {% for recipe in recipe_data %}
-            <li><a href="{% url 'recipe_detail' pk=recipe.pk %}"> {{ recipe.title }} </a> </li>
+            <li><a href="{% url 'recipe_detail' recipe_url=recipe.url %}"> {{ recipe.title }} </a> </li>
     {% endfor %}
 </ul>
 

@@ -4,7 +4,7 @@ from recipebox import views
 
 urlpatterns = [
     path("", views.index),
-    path('recipes/<int:pk>/', views.recipe_detail, name="recipe_detail"),
-    path('authors/<int:pk>/', views.author_detail, name="author_detail")
+    path('recipes/<str:recipe_url>/', views.recipe_detail, name="recipe_detail"),
+    path('authors/<str:author_url>/', views.author_detail, name="author_detail")
 ]
 

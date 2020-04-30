@@ -10,6 +10,9 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def url(self):
+        return self.name.replace(" ", "-").lower()
 
 
 class Recipe(models.Model):
@@ -21,4 +24,7 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def url(self):
+        return self.title.replace(" ", "-").lower()
     

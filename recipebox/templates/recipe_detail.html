@@ -1,7 +1,7 @@
 <h1>{{ recipe.title }}</h1>
 <ul>
 <li>
-    <h2>Author: <a href="{% url 'author_detail' pk=recipe.author.pk %}"> {{ recipe.author.name }}</a></h2>
+    <h2>Author: <a href="{% url 'author_detail' author_url=recipe.author.url %}"> {{ recipe.author.name }}</a></h2>
 </li>
 <li>
     <h3>Description:</h3>

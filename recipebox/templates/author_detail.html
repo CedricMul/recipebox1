@@ -5,7 +5,7 @@
 <ul>
     {% for recipe in recipe_data %}
         {% if recipe.author == author %}
-            <li><a href="{% url 'recipe_detail' pk=recipe.pk %}"> {{ recipe.title }}</a> </li>
+            <li><a href="{% url 'recipe_detail' recipe_url=recipe.url %}"> {{ recipe.title }}</a> </li>
         {% endif %}
     {% endfor %}
 </ul>
