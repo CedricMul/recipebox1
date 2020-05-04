@@ -1,6 +1,5 @@
 from django.db import models
 from django.utils import timezone
-from datetime import datetime
 
 # Create your models here.
 
@@ -12,11 +11,11 @@ class Author(models.Model):
         return self.name
     
     def url(self):
-        return self.name.replace(" ", "-").lower()
+        return self.name.replace(" ", "_").lower()
 
 
 class Recipe(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=30)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     description = models.TextField()
     time_required = models.CharField(max_length = 20)
@@ -26,5 +25,5 @@ class Recipe(models.Model):
         return self.title
     
     def url(self):
-        return self.title.replace(" ", "-").lower()
+        return self.title.replace(" ", "_").lower()
     
