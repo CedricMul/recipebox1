@@ -118,4 +118,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+APP_PATH = BASE_DIR + "/recipebox/"
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(APP_PATH, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(APP_PATH, 'static'),
+)

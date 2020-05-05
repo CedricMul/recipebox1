@@ -1,8 +1,16 @@
-<h1>Recipe Box</h1>
+{% load static %}
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <h1>Kano's Sci Fi Recipe Box</h1>
+</head>
 <ul>
     {% for recipe in recipe_data %}
             <li><a href="{% url 'recipe_detail' recipe_url=recipe.url %}"> {{ recipe.title }} </a> </li>
     {% endfor %}
 </ul>
-
+<h3>Want to contribute?</h3>
+<a href="{% url 'author_add'%}">Add an Author</a> <br />
+<a href="{% url 'recipe_add'%}">Add a Recipe</a>
+</html>
     
