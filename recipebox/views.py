@@ -22,7 +22,7 @@ def recipeadd(request):
                 time_required=data['time_required'],
                 instructions=data['instructions']
             )
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect(reverse('homepage'))
 
     else:
         form = RecipeAddForm()
@@ -40,7 +40,7 @@ def authoradd(request):
                 name=data['name'],
                 bio=data['bio'],
             )
-            return HttpResponseRedirect('/')
+            return HttpResponseRedirect(reverse('homepage'))
 
     else:
         form = AuthorAddForm()
