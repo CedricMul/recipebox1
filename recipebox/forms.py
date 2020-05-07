@@ -1,9 +1,12 @@
 from django import forms
 from recipebox.models import Author
+from django.contrib.auth.models import User
 
 class AuthorAddForm(forms.Form):
     name = forms.CharField(max_length=50)
     bio = forms.CharField(widget=forms.Textarea)
+    user = forms.ModelChoiceField(queryset=User.objects.all())
+
     def __str__(self):
         return self.name
     
@@ -22,3 +25,8 @@ class RecipeAddForm(forms.Form):
     
     def url(self):
         return self.title.replace(" ", "_").lower()
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=50)
+    password = forms.CharField(widget=forms.PasswordInput)

@@ -2,15 +2,22 @@
 <html>
 <head>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <h1>Kano's Sci Fi Recipe Box</h1>
+    <h1>Recipes for the Hoopy Frood Who Knows Where His Towel Is</h1>
+    {% if request.user.is_authenticated %}
+    Hi, {{ request.user.username }}! <a href="{% url 'logout'%}">Log out</a>
+    {% else %}
+    <a href="{% url 'login' %}">Log in</a>
+    {% endif %}
 </head>
 <ul>
     {% for recipe in recipe_data %}
             <li><a href="{% url 'recipe_detail' recipe_url=recipe.url %}"> {{ recipe.title }} </a> </li>
     {% endfor %}
 </ul>
+{% if request.user.is_authenticated %}
 <h3>Want to contribute?</h3>
 <a href="{% url 'author_add'%}">Add an Author</a> <br />
 <a href="{% url 'recipe_add'%}">Add a Recipe</a>
+{% endif %}
 </html>
     
