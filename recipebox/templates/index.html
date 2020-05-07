@@ -14,10 +14,10 @@
             <li><a href="{% url 'recipe_detail' recipe_url=recipe.url %}"> {{ recipe.title }} </a> </li>
     {% endfor %}
 </ul>
-{% if request.user.is_authenticated %}
+
 <h3>Want to contribute?</h3>
 <a href="{% url 'author_add'%}">Add an Author</a> <br />
 <a href="{% url 'recipe_add'%}">Add a Recipe</a>
-{% endif %}
+
 </html>
     
