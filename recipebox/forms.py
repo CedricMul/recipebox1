@@ -26,6 +26,9 @@ class RecipeAddForm(forms.Form):
     def url(self):
         return self.title.replace(" ", "_").lower()
 
+# Cedric
+    class RecipeEditForm(forms.Form):
+        pass
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=50)
