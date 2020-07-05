@@ -1,5 +1,6 @@
 from django import forms
-from recipebox.models import Author
+from django.db import models
+from recipebox.models import Author, Recipe
 from django.contrib.auth.models import User
 
 class AuthorAddForm(forms.Form):
@@ -26,9 +27,16 @@ class RecipeAddForm(forms.Form):
     def url(self):
         return self.title.replace(" ", "_").lower()
 
-# Cedric
-    class RecipeEditForm(forms.Form):
-        pass
+class RecipeModelForm(forms.ModelForm):
+    class Meta:
+        model = Recipe
+        fields = [
+            'title',
+            'author',
+            'description',
+            'time_required',
+            'instructions'
+            ]
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=50)

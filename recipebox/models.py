@@ -30,4 +30,3 @@ class Recipe(models.Model):
     
     def url(self):
         return self.title.replace(" ", "_").lower()
-    

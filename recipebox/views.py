@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from recipebox.models import Author, Recipe
-from recipebox.forms import AuthorAddForm, RecipeAddForm, LoginForm
+from recipebox.forms import AuthorAddForm, RecipeAddForm, LoginForm, RecipeModelForm
 
 # Create your views here.
 def index(request):
@@ -103,6 +103,10 @@ def authoradd(request):
     
     return render(request, html, {"form": form})
 
+def recipe_edit_view(request, id):
+    recipe = Recipe.objects.get(id=id)
+    populated_form = RecipeModelForm(request.POST, instance=recipe)
+    return render(request, 'recipe_add_form.html', {"recipe": populated_form})
 
 def author_detail(request, author_url):
     author_url = author_url.replace("_"," ").title()
